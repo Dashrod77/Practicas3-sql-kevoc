@@ -17,7 +17,16 @@ Un start procedure es una funcion de sql que nos permite crear como un mini back
 
 
 Disenio:
-
+flowchart TD
+A["START PROCEDURE registrar prestamo"] --> B[("Funciono bien el proceso?")]
+B --> |NO |D[("Hace rollback")] --> Z
+B --> |si |c[("Hace commit")] --> Z[("FIN")]
+E["START PROCEDURE registrar devolucion"] --> F[("Se completo la devolucion?")]
+F --> |NO |G[("Hace rollback")] --> Z
+F --> |SI |H[("Hace commit")] --> Z
+I["START PROCEDURE registrar pago"] --> J[("Se registro el pago?")]
+J --> |No |K[("Hace rollback")] --> Z
+J --> |SI |M[("Hace commit")] --> Z
 
 
 ---
@@ -31,9 +40,9 @@ En esta ultima practica aprendi a poder hacer el start procedure en este caso ta
 
 
 Evidencias:
-![SP01]()
-![SP02]()
-![SP03]()
+![SP01](img_SP/SP01.png)
+![SP02](img_SP/SP02.png)
+![SP03](img_SP/SP03.png)
 
 
 ---
