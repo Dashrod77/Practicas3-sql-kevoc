@@ -1,12 +1,6 @@
 DELIMITER $$
 
-CREATE PROCEDURE sp_registrar_prestamo(
-    IN p_usuario_id INT,
-    IN p_equipo_id INT,
-    IN p_fecha_prestamo DATETIME,
-    IN p_fecha_devolucion_programada DATETIME,
-    OUT p_prestamo_id INT
-)
+CREATE PROCEDURE sp_registrar_prestamo(IN p_usuario_id INT, IN p_equipo_id INT, IN p_fecha_prestamo DATETIME, IN p_fecha_devolucion_programada DATETIME, OUT p_prestamo_id INT )
 BEGIN
     DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
